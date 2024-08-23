@@ -1,16 +1,16 @@
 import React from "react";
-import { Form, FormGroup, FormInput } from "semantic-ui-react";
+import { Form, Segment } from "semantic-ui-react";
 import ConfirmationButton from "./ConfirmationButton";
+import EntryForm from "./EntryForm";
 
-function NewEntryForm() {
+function NewEntryForm({ addEntry, description, setDescription, value, setValue, isExpense, setIsExpense }) {
   return (
-    <Form unstackable>
-      <FormGroup>
-        <FormInput icon="tags" width={12} label="Description" placeholder="New Shinny thing" />
-        <FormInput icon="dollar" width={4} label="Value" placeholder="100.00" iconPosition="left" />
-      </FormGroup>
-      <ConfirmationButton />
-    </Form>
+    <Segment textAlign="center" color="blue">
+      <Form unstackable>
+        <EntryForm description={description} setDescription={setDescription} value={value} setValue={setValue} isExpense={isExpense} setIsExpense={setIsExpense} />
+        <ConfirmationButton addEntry={addEntry} />
+      </Form>
+    </Segment>
   );
 }
 
